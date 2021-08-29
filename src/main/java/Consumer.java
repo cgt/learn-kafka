@@ -13,7 +13,7 @@ public class Consumer {
         config.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
         config.put("group.id", "MyConsumer");
         final var consumer = new KafkaConsumer<Void, String>(config);
-        consumer.subscribe(List.of("foo"));
+        consumer.subscribe(List.of("bar"));
         while (true) {
             final var records = consumer.poll(Duration.ofSeconds(1));
             for (final var record : records) {
